@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ca">
     <head>
@@ -16,19 +17,18 @@
             </div>
         </section>
         <section class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-                    <div class="thumbnail">
-                        <div class="caption">
-<!--                            Expression language to get values from medicament-->
-                            <h3>${medicament.name}</h3>
-                            <p>${medicament.description}</p>
-                            <p>${medicament.price} €</p>
-                            <p>Hi ha ${medicament.stockQuantity} unitats en magatzem</p>
+            <c:forEach items="${medicaments}" var="medicament">
+                    <div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h3>${medicament.name}</h3>
+                                <p>${medicament.description}</p>
+                                <p>${medicament.price}</p>
+                                <p>Hi ha ${medicament.stockQuantity} unitats en magatzem</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </c:forEach>
         </section>
     </body>
 </html>
