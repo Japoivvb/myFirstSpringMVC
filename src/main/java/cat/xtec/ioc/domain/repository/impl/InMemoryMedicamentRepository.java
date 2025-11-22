@@ -38,4 +38,20 @@ public class InMemoryMedicamentRepository implements MedicamentRepository {
     public List<Medicament> getAllMedicaments() {
         return listOfMedicaments;
     }
+
+    public Medicament getMedicamentById(String medicamentId) {
+        Medicament medicamentById = null;
+        for (Medicament medicament : listOfMedicaments) {
+            if (medicament != null && medicament.getMedicamentId() != null
+                    && medicament.getMedicamentId().equals(medicamentId)) {
+                medicamentById = medicament;
+                break;
+            }
+        }
+        if (medicamentById == null) {
+            throw new IllegalArgumentException(
+                    "No s'han trobat medicaments amb el codi: " + medicamentId);
+        }
+        return medicamentById;
+    }
 }

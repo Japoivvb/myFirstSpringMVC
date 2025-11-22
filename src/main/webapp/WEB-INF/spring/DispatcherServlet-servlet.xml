@@ -12,7 +12,9 @@
 
     <mvc:annotation-driven />
 <!--    <context:component-scan base-package="cat.xtec.ioc.controller" />-->
-        <context:component-scan base-package="cat.xtec.ioc.controller cat.xtec.ioc.domain.repository" />
+<!--        <context:component-scan base-package="cat.xtec.ioc.controller cat.xtec.ioc.domain.repository" />-->
+        <context:component-scan base-package="cat.xtec.ioc.controller cat.xtec.ioc.domain.repository cat.xtec.ioc.service" />
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
