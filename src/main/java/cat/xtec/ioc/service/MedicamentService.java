@@ -1,15 +1,15 @@
-package cat.xtec.ioc.domain.repository;
+package cat.xtec.ioc.service;
 
 import cat.xtec.ioc.domain.Medicament;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public interface MedicamentRepository {
+public interface MedicamentService {
 
     List<Medicament> getAllMedicaments();
 
-    Medicament getMedicamentById(String medicamentId);
+    Medicament getMedicamentById(String medicamentID);
 
     List<Medicament> getMedicamentsByCategory(String category);
 
